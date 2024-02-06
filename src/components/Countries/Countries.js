@@ -43,10 +43,10 @@ const Countries = ({ data }) => {
                         </div>
                         <div className='text-countries'>
                             <h3> {item.name.common}</h3>
-                            <p>Population: <span>{item.population}</span> </p>
-                            <p>Region:    <span>{item.region}</span></p>
+                            <p className='bold'>Population: <span className='light'>{item.population}</span> </p>
+                            <p className='bold'>Region: <span className='light'>{item.region}</span> </p>
                             {/* <p>Sub Region: <span>{item.subregion}</span></p> */}
-                            <p>Capital:   <span>{item.capital}</span></p>
+                            <p className='bold'>Capital: <span className='light'>{item.capital}</span> </p>
                         </div>
 
                     </div>

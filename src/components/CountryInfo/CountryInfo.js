@@ -5,59 +5,46 @@ import { useParams, useNavigate } from 'react-router-dom';
 // import { faSearch} from '@fortawesome/free-solid-svg-icons';
 import './CountryInfo.css'
 
-const CountryInfo = ({ data }) => {
+const CountryInfo = ({ data, mode }) => {
     //lien pour avancer vers une autre page
     const navigate = useNavigate()
+
     // method epour trouver l'item recherché dans le map selon son area
     const { area } = useParams()
     let product = data.find(item => item.area == area)
 
-    // function FindBorder(element) {
-    //     data.map((item)
-    //         => {
-    //             if (item.cca3 == element) {
-    //                 return item.name.common
-    //             }
-    //         })
-
-    // }
-
     return (
         <div className='desc-container'>
-            <button onClick={() => navigate(`/countries`)}> Back </button>
+            <button id='back-button' onClick={() => navigate(`/countries`)} > Back </button>
             {/* <button onClick={() => navigate(`/countries`)} > <FontAwesomeIcon id='iconBack' icon={faArrowLeft}/>Back</button> */}
             <div className='description'>
                 <div>
                     <img src={product?.flags.png} alt="product" />
                 </div>
-                <div>
-
+                <div className='description-text'>
                     <div>
-                        <p>Native Name:  <span>{product?.name.common}</span></p>
-                        <p>Population: <span>{product?.population}</span> </p>
-                        <p>Region:    <span>{product?.region}</span></p>
-                        <p>Sub Region: <span>{product?.subregion}</span></p>
-                        <p>Capital:   <span>{product?.capital}</span></p>
+                        <p className='bold'>Native Name:  <span className='light'>{product?.name.common}</span></p>
+                        <p className='bold'>Population: <span className='light'>{product?.population}</span> </p>
+                        <p className='bold'>Region:    <span className='light'>{product?.region}</span></p>
+                        <p className='bold'>Sub Region: <span className='light'>{product?.subregion}</span></p>
+                        <p className='bold'>Capital:   <span className='light'>{product?.capital}</span></p>
                     </div>
                     <div>
-                        <p>Top Level Domain: <span>{product?.tld}</span></p>
+                        <p className='bold'>Top Level Domain: <span className='light'>{product?.tld}</span></p>
                         {/* <p>Currencies: <span>{product?.currencies}</span></p> */}
                         {/* <p>Languages: <span>{product?.languages}</span></p> */}
                     </div>
-
-                    {/* {data.map((item)=>
-                    element=== item.cca3?<button> {item.name.common}<button />)} */}
-                    {/* <p>Border Countries: </p> <button>{(product?.borders) ? Object.values(product?.borders) 
-                            .toString() 
-                            .split(',') 
-                            .join (' '): "NAN"} </button> */}
-                    <p>Border Countries: </p>{product?.borders?.map((element,index) =>
-                        ( <button key={index}>{element != '' ? element : 'NAN'}</button>)
-                    )}
-                    {/* (product?.borders) ? Object.values(product?.borders) 
-                            .toString() 
-                            .split(',') 
-                            .join (' '): "NAN" */}
+                    <div className='borders-container'>
+                        <p className='bold'>Border&nbsp;Countries:&nbsp;</p>
+                        <div className='borders'>
+                            {product?.borders?.map((item, index) =>
+                            (<div key={index}>
+                                <button onClick={() => navigate(`/${data.find(element => element?.cca3 === item).area}`)} >{data.find(element => element?.cca3 === item).name.common}</button>
+                            </div>
+                            )
+                            )}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
