@@ -1,0 +1,17 @@
+.description img{
+    width:250px;
+}
+.description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding: 5vw; */
+    background: white;
+    color: black;
+    width: 30vw;
+    height: 30vw;
+    padding: 4vw;
+    border-radius: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
