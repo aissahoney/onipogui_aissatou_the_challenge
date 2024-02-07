@@ -23,7 +23,7 @@ const Countries = ({ data }) => {
             <div className='search-div'>
                {/* <FontAwesomeIcon id='iconBack' icon={faSearch}/> */}
                 <input type="text" placeholder='Search for country' onChange={(e) => setSelectCountry(e.target.value)}/>
-                <select  onChange={(e) => setSelectRegion(e.target.value)}>
+                <select  onChange={(e) => setSelectRegion(e.target.value)} className='select-container'>
                     <option value=""> Filter by region </option>
                     <option value="africa">Africa</option>
                     <option value="americas">America</option>

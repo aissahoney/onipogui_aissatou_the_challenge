@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RouterProvider, createBrowserRouter ,Outlet, useNavigate, Link} from 'react-router-dom';
+import { RouterProvider, createBrowserRouter ,Outlet, Link} from 'react-router-dom';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faSearch} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
@@ -41,10 +41,10 @@ function App() {
       ]}
   ])
 
-
+ 
   function Root() {
     return (
-        <>
+        <div className={`${mode ? null : "darkMode"}`}>
 
             <div className='header'>
 
@@ -57,7 +57,7 @@ function App() {
                 <Outlet />
             </div>
 
-        </>
+        </div>
 
 
     )

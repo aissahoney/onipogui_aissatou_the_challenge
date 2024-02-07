@@ -1,12 +1,22 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.App{
+  margin: 0;
+  height: 100vh;
+}
 .header{
+  margin: 0;
   width: 100vw;
-  height: 4vw;
-  /* background: navy; */
-  /* color:white; */
+  height: 5vw;
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  gap: 50vw;
+  box-shadow: rgba(24, 24, 27, 0.392) 0px 3px 10px 0px;
 }
 
 /* titres */
@@ -24,6 +34,8 @@
 }
 
 .darkMode{
+  margin: 0;
   background: rgb(44,55,67);
   color: white;
+  height: 100vh;
 }

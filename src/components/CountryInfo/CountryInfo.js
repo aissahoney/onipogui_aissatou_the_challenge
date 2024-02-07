@@ -22,6 +22,8 @@ const CountryInfo = ({ data, mode }) => {
                     <img src={product?.flags.png} alt="product" />
                 </div>
                 <div className='description-text'>
+                    <h1>{Object.values(product?.name.nativeName)[0].common}</h1>
+
                     <div>
                         <p className='bold'>Native Name:  <span className='light'>{product?.name.common}</span></p>
                         <p className='bold'>Population: <span className='light'>{product?.population}</span> </p>
@@ -31,8 +33,8 @@ const CountryInfo = ({ data, mode }) => {
                     </div>
                     <div>
                         <p className='bold'>Top Level Domain: <span className='light'>{product?.tld}</span></p>
-                        {/* <p>Currencies: <span>{product?.currencies}</span></p> */}
-                        {/* <p>Languages: <span>{product?.languages}</span></p> */}
+                        <p>Currencies: <span>{Object.values(product?.currencies)[0].name}</span></p>
+                        {/* <p>Languages: <span>{Object.values(product?.languages)[0].name}</span></p> */}
                     </div>
                     <div className='borders-container'>
                         <p className='bold'>Border&nbsp;Countries:&nbsp;</p>
