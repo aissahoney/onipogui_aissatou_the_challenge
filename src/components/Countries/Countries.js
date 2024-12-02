@@ -19,7 +19,7 @@ const Countries = ({ data }) => {
             (item.region.toLowerCase() === selectRegion.toLowerCase() ||
             selectRegion === ''))
     return (
-        <>
+        <div className='all-container'>
             <div className='search-div'>
                {/* <FontAwesomeIcon id='iconBack' icon={faSearch}/> */}
                 <input type="text" placeholder='Search for country' onChange={(e) => setSelectCountry(e.target.value)}/>
@@ -53,7 +53,7 @@ const Countries = ({ data }) => {
                 )
                 }
             </div>
-        </>
+        </div>
     )
 };
 

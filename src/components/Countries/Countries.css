@@ -1,15 +1,19 @@
+
+.all-container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 .countries-container {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content:center;
     flex-wrap: wrap;
     gap: 3vw;
     padding: 2vw;
     box-sizing: border-box;
-    width: 100vw;
-    padding-top: 5vw;
-    
+    width: 100vw;  
 }
 
 .countries-container img {
@@ -59,7 +63,7 @@
 }
 
 /* select darkmode */
-.darkMode .select-container{
+.darkMode input, .darkMode select{
     color: white;
 }
 

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +16,7 @@ const CountryInfo = ({ data, mode }) => {
 
     return (
         <div className='desc-container'>
-            <button id='back-button' onClick={() => navigate(`/countries`)} > Back </button>
+            <button id='back-button' onClick={() => navigate(`/`)} > Back </button>
             {/* <button onClick={() => navigate(`/countries`)} > <FontAwesomeIcon id='iconBack' icon={faArrowLeft}/>Back</button> */}
             <div className='description'>
                 <div>

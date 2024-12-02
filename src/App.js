@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RouterProvider, createBrowserRouter ,Outlet, Link} from 'react-router-dom';
+import { RouterProvider, createBrowserRouter ,Outlet, NavLink} from 'react-router-dom';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faSearch} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
@@ -14,6 +14,7 @@ import ErrorPage from './components/Error/Error';
 function App() {
   const [data, setData] = useState([])
   const [mode, setMode]=useState(true)
+ 
   
   useEffect(() => {
     axios.get('https://restcountries.com/v3.1/all')
@@ -23,13 +24,13 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path: '/',
+      path:'/',
       element: <Root />,
       errorElement: <ErrorPage />,
-      children: [
-        
+
+      children: [ 
         {
-          path: '/countries',
+          path:'/',
           element: <Countries data={data}/>
 
         }
@@ -44,12 +45,13 @@ function App() {
  
   function Root() {
     return (
-        <div className={`${mode ? null : "darkMode"}`}>
+        <div className="App">
 
             <div className='header'>
 
-                <h3><Link to='/countries'></Link>Where is The World </h3>
-                <h3 onClick={()=>setMode(!mode)}>  Dark Mode</h3>
+                <NavLink to='/'><h3>Where is The World </h3></NavLink> 
+                {mode ? <h3 onClick={()=>setMode(!mode)}> DarkMode</h3>:
+                <h3 onClick={()=>setMode(!mode)}>LightMode</h3>}
                 
             </div>
 
@@ -66,10 +68,9 @@ function App() {
 
 
   return (
-    <div className={`${mode ? null : "darkMode"}`}>
-  
-      <RouterProvider router={router} />
 
+    <div className={`${mode ? "lightMode" : "darkMode"}`}>
+      <RouterProvider router={router} />
     </div>
   );
 }

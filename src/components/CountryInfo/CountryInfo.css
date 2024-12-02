@@ -61,18 +61,29 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding:2vw;
-    gap:1rem
+    gap:1rem;
+    
 }
 
 
 .borders-container{
     display: flex;
     flex-direction: row;
+
 }
 
 
 /* darkmode */
-.darkMode .description, .darkMode .description button,.darkMode #back-button  {
-    color: white;
+
+/* .lightMode 
+    .description, .description button, #back-button  {
+        color: rgb(0, 0, 0);
 }
+
+.darkMode 
+    .description, .description button, #back-button  {
+        color: white;
+} */
+
+
 
