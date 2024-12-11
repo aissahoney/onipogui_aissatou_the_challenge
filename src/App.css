@@ -53,3 +53,32 @@ body{
 .darkMode a, .darkMode button, .darkMode div {
   color: white;
 }
+
+
+/* Masquer le contenu sur les petits écrans */
+.desktop-content {
+  display: block;
+}
+
+/* Masquer le message mobile sur les grands écrans */
+.mobile-message {
+  display: none;
+}
+
+/* Médias queries pour les écrans mobiles */
+@media (max-width: 768px) {
+  /* Masquer le contenu desktop */
+  .desktop-content {
+    display: none;
+  }
+
+  /* Afficher le message pour les utilisateurs mobiles */
+  .mobile-message {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    background-color: #f44336;  /* Rouge */
+    color: white;
+    font-size: 1.2rem;
+  }
+}

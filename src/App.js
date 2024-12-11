@@ -17,7 +17,7 @@ function App() {
  
   
   useEffect(() => {
-    axios.get('https://restcountries.com/v3.1/all')
+    axios.get('https://restcountries.com/v2/all')
       .then((reponse) => setData(reponse.data))
       .catch((error) => console.log(error));
   }, []);
@@ -45,22 +45,25 @@ function App() {
  
   function Root() {
     return (
-        <div className="App">
 
-            <div className='header'>
+      <div className="App">
+      {/* Message mobile */}
+      <div className="mobile-message">
+        <h2>Mobile version coming soon! Please visit us on a desktop.</h2>
+      </div>
 
+      {/* Contenu principal */}
+      <div className='header desktop-content'>
                 <NavLink to='/'><h3>Where is The World </h3></NavLink> 
                 {mode ? <h3 onClick={()=>setMode(!mode)}> DarkMode</h3>:
                 <h3 onClick={()=>setMode(!mode)}>LightMode</h3>}
                 
             </div>
-
             <div>
                 <Outlet />
             </div>
-
-        </div>
-
+    </div>
+     
 
     )
 }
