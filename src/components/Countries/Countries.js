@@ -34,7 +34,7 @@ const Countries = ({ data }) => {
 
             <div className="countries-container">
                 {searchFilter.map((item, index) => (
-                    <div key={index} onClick={() => navigate(`/${item.alpha2Code}`)} className="single">
+                    <div key={index} onClick={() => navigate(`/${item.alpha3Code}`)} className="single">
                         <div>
                             <img src={item.flags.png} alt={`${item.name} flag`} />
                         </div>

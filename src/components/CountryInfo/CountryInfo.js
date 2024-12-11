@@ -5,7 +5,7 @@ import './CountryInfo.css';
 const CountryInfo = ({ data }) => {
     const navigate = useNavigate();
     const { area } = useParams();
-    const product = data.find(item => item.alpha2Code === area);
+    const product = data.find(item => item.alpha3Code === area);
 
     // S'assurer que product existe avant d'afficher les données
     if (!product) {
