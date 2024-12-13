@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { GoSun } from "react-icons/go";
+import { FaMoon } from "react-icons/fa";
 import { RouterProvider, createBrowserRouter, Outlet, NavLink } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSearch} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import './App.css';
 import CountryInfo from './components/CountryInfo/CountryInfo';
@@ -57,8 +57,8 @@ function App() {
         <div className='desktop-content'>
           <div className='header'>
             <NavLink to='/'><h3>Where is The World </h3></NavLink>
-            {mode ? <h3 onClick={() => setMode(!mode)}> DarkMode</h3> :
-              <h3 onClick={() => setMode(!mode)}>LightMode</h3>}
+            {mode ? <div onClick={() => setMode(!mode)}> <FaMoon style={{ fontSize: '25px' }}/></div> :
+              <div onClick={() => setMode(!mode)}><GoSun style={{ color: 'yellow', fontSize: '30px' }}/></div>}
           </div>
           <div>
             <Outlet />
